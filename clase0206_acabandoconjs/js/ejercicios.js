@@ -10,5 +10,9 @@ let boton = document.querySelector("#boton");
 boton.addEventListener("click",cambiarColor);
 
 function cambiarColor(){
-    caja.style.backgroundcolor = "red";
+    if(caja.style.backgroundColor === "blue"){
+        caja.style.backgroundColor = "red";
+    }else{
+        caja.style.backgroundColor = "blue";
+    }
 }

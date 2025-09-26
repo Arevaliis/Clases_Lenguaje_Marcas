@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<universidad>
+    <asignaturas>
+        <asignatura id="DAM01">
+            <nombre>Programación</nombre>
+            <creditos>6</creditos>
+        </asignatura>
+    </asignaturas>
+    <alumnos>
+        <alumno nia="10001">
+            <nombre>Pepe Ramirez</nombre>
+        </alumno>
+    </alumnos>
+    <matriculas>
+        <matricula alumno="10001" asignatura="DAM01"/>
+    </matriculas>
+</universidad>

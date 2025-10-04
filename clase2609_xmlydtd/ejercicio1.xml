@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE empresa SYSTEM "ejercicio1.dtd">
+<empresa>
+  <empleado id="e1">
+    <nombre>Laura Gómez</nombre>
+    <puesto>DEV</puesto>
+    <salario moneda="EUR">32000</salario>
+  </empleado>
+  <empleado id="e2">
+    <nombre>Diego Pérez</nombre>
+    <puesto>SYS</puesto>
+    <salario moneda="USD">42000</salario>
+  </empleado>
+</empresa>

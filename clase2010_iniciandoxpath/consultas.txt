@@ -1,0 +1,132 @@
+EJERCICIOS DE XPATH
+-----------------------------------------------------------
+
+XML DE REFERENCIA:
+------------------
+<ies>
+  <nombre>Prometeo by the Power</nombre>
+  <web>http://www.prometeo-fp.com</web>
+  <ciclos>
+    <ciclo id="ASIR">
+      <nombre>Administración de Sistemas Informáticos en Red</nombre>
+      <grado>Superior</grado>
+      <decretoTitulo año="2009" />
+    </ciclo>
+    <ciclo id="DAM">
+      <nombre>Desarrollo de Aplicaciones Multiplataforma</nombre>
+      <grado>Superior</grado>
+      <decretoTitulo año="2010" />
+    </ciclo>
+    <ciclo id="DAW">
+      <nombre>Desarrollo de Aplicaciones Web</nombre>
+      <grado>Superior</grado>
+      <decretoTitulo año="2010" />
+    </ciclo>
+    <ciclo id="SMR">
+      <nombre>Sistemas Microinformáticos y Redes</nombre>
+      <grado>Medio</grado>
+      <decretoTitulo año="2008" />
+    </ciclo>
+  </ciclos>
+</ies>
+
+
+------------------------------------------------------------
+NIVEL 1 - Consultas básicas
+------------------------------------------------------------
+
+1) //web
+   -> Selecciona el elemento <web>.
+   Resultado: http://www.prometeo-fp.com
+
+2) /ies//nombre
+   -> Busca todos los <nombre> dentro del documento.
+   Resultado:
+      Prometeo by the Power
+      Administración de Sistemas Informáticos en Red
+      Desarrollo de Aplicaciones Multiplataforma
+      Desarrollo de Aplicaciones Web
+      Sistemas Microinformáticos y Redes
+
+3) //ciclos/ciclo/nombre
+   -> Devuelve los nombres de los ciclos formativos.
+
+4) //ciclos//nombre
+   -> Igual que la anterior, pero más general.
+
+------------------------------------------------------------
+NIVEL 2 - Selección de atributos
+------------------------------------------------------------
+
+5) //ciclos/ciclo/@id
+   -> Devuelve los ID de los ciclos.
+   Resultado: ASIR, DAM, DAW, SMR
+
+6) //ciclos/ciclo/decretoTitulo/@año
+   -> Devuelve los años de los decretos.
+   Resultado: 2009, 2010, 2010, 2008
+
+------------------------------------------------------------
+NIVEL 3 - Filtros [ ] sobre elementos y atributos
+------------------------------------------------------------
+
+7) //ciclos/ciclo[grado="Medio"]
+   -> Devuelve el ciclo completo cuyo grado es "Medio".
+
+8) //ciclos/ciclo[grado="Superior"]/nombre
+   -> Devuelve los nombres de los ciclos de Grado Superior.
+
+9) //ciclos/ciclo[decretoTitulo/@año<"2010"]/nombre
+   -> Devuelve los nombres de los ciclos con decreto anterior a 2010.
+   Resultado:
+      Administración de Sistemas Informáticos en Red
+      Sistemas Microinformáticos y Redes
+
+10) //ciclos/ciclo[decretoTitulo/@año="2010" or decretoTitulo/@año="2008"]/nombre/text()
+    -> Devuelve los nombres de los ciclos con decreto 2008 o 2010.
+    Resultado:
+      Desarrollo de Aplicaciones Multiplataforma
+      Desarrollo de Aplicaciones Web
+      Sistemas Microinformáticos y Redes
+
+------------------------------------------------------------
+NIVEL 4 - Funciones XPath
+------------------------------------------------------------
+
+11) count(//ciclos/ciclo)
+    -> Cuenta cuántos ciclos hay en total.
+    Resultado: 4
+
+12) count(//ciclos/ciclo[grado="Superior"])
+    -> Cuenta los ciclos de Grado Superior.
+    Resultado: 3
+
+13) //ciclo[decretoTitulo/@año != "2010"]
+    -> Devuelve los ciclos cuyo decreto no sea del año 2010.
+
+14) //ciclo[grado="Medio"]
+    -> Versión abreviada de la consulta 7.
+
+15) //ciclo[decretoTitulo/@año < "2010"]/nombre/text()
+    -> Devuelve los nombres de los ciclos con decreto anterior a 2010.
+    Resultado:
+       Administración de Sistemas Informáticos en Red
+       Sistemas Microinformáticos y Redes
+
+------------------------------------------------------------
+NIVEL 5 - Funciones combinadas y concatenación
+------------------------------------------------------------
+
+16) //ciclo/concat(nombre/text(), " - ", grado/text())
+    -> Concatena el nombre y el grado de cada ciclo.
+    Resultado:
+       Administración de Sistemas Informáticos en Red - Superior
+       Desarrollo de Aplicaciones Multiplataforma - Superior
+       Desarrollo de Aplicaciones Web - Superior
+       Sistemas Microinformáticos y Redes - Medio
+
+17) //ciclo[grado="Superior"]/concat(nombre," - ",decretoTitulo/@año)
+    Resultado:
+       Administración de Sistemas Informáticos en Red - 2009
+       Desarrollo de Aplicaciones Multiplataforma - 2010
+       Desarrollo de Aplicaciones Web - 2010

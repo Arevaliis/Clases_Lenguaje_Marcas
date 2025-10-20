@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<biblioteca>
+  <nombre>Biblioteca Central Aurora</nombre>
+  <web>http://www.biblioteca-aurora.com</web>
+  <libros>
+    <libro id="L001">
+      <titulo>Introducción a la Programación</titulo>
+      <autor>Lucía Romero</autor>
+      <editorial>Altea</editorial>
+      <anio>2019</anio>
+      <prestado disponibilidad="no" />
+    </libro>
+    <libro id="L002">
+      <titulo>Redes de Computadores</titulo>
+      <autor>Carlos Peña</autor>
+      <editorial>McGraw-Hill</editorial>
+      <anio>2017</anio>
+      <prestado disponibilidad="si" />
+    </libro>
+    <libro id="L003">
+      <titulo>Bases de Datos Relacionales</titulo>
+      <autor>Elena Sánchez</autor>
+      <editorial>Reverté</editorial>
+      <anio>2015</anio>
+      <prestado disponibilidad="si" />
+    </libro>
+    <libro id="L004">
+      <titulo>Administración de Servidores</titulo>
+      <autor>Mario Vidal</autor>
+      <editorial>Anaya</editorial>
+      <anio>2021</anio>
+      <prestado disponibilidad="no" />
+    </libro>
+    <libro id="L005">
+      <titulo>Desarrollo Web con JavaScript</titulo>
+      <autor>Sara Torres</autor>
+      <editorial>Anaya</editorial>
+      <anio>2022</anio>
+      <prestado disponibilidad="no" />
+    </libro>
+  </libros>
+</biblioteca>
+
+
+- Título de todos los libros
+
+- IDs de todos los libros
+
+- Libros prestados actualmente
+
+- Libros que no están prestados
+
+- Libros publicados antes de 2020
+
+- Libros de la editorial Anaya
+
+- Libros no prestados y publicados después de 2020
+
+- Concatenar título y autor
+
+- Contar cuántos libros hay en total
+
+- Contar los libros actualmente prestados
